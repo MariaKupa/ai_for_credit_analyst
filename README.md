@@ -2,7 +2,7 @@
 
 How I, as a credit risk analyst, automated the monthly IFRS 9 output with an AI skill. The script extracts and checks the data, compares it with last month and saves the Excel file. The AI writes a short comment on what changed.
 
-📖 **The story behind it:** [Use AI to automate the IFRS9 output](link-to-your-blog-post)
+📖 **The story behind it:** [Use AI to automate the IFRS9 output](https://mariakupa.se/posts/month-end-provision-basis)
 
 > Shared for inspiration. All products, amounts and events are synthetic. No company data, systems or names are used. © 2026, all rights reserved.
 
