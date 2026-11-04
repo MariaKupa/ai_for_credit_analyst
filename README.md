@@ -2,7 +2,7 @@
 
 How I, as a credit risk analyst, automated the monthly IFRS 9 output with an AI skill. The script extracts and checks the data, compares it with last month and saves the Excel file. The AI writes a short comment on what changed.
 
-📖 **The story behind it:** [Use AI to automate the IFRS9 output](https://mariakupa.se/posts/month-end-provision-basis)
+📖 **The story behind it:** [Month-end IFRS 9 reporting: Python for calculations, AI for commentary](https://mariakupa.se/posts/month-end-provision-basis)
 
 > Shared for inspiration. All products, amounts and events are synthetic. No company data, systems or names are used. © 2026, all rights reserved.
 
@@ -17,7 +17,7 @@ Every month-end, it:
 5. Saves an Excel file with the output and the comparisons, after reconciling it with the database.
 6. Sends a notification with the checks, a short AI-written comment and a table per product and stage.
 
-## The design: AI never touches the numbers
+## The design: automate the calculations, not the analyst’s judgement
 
 | Step | Who does it |
 |---|---|
@@ -25,7 +25,7 @@ Every month-end, it:
 | Read the results and write 3–6 bullet points on what changed | AI agent (rules in `SKILL.md`) |
 | Decide whether to override a failed check | Human |
 
-The script saves all results in `summary.json`. That file is the only thing the AI reads, so the comment can only be based on facts the script has calculated.
+The script saves all results in `summary.json`. The skill instructs the AI to use only facts in that summary when drafting commentary, without calculating new figures, querying the database directly or changing the numeric results. The AI writes a separate `comment.md` file; the script combines it with the checks and comparison table when building the notification. These are instructions for the agent, not enforced access restrictions. Investigating causes and interpreting the results remain the analyst's responsibility.
 
 The script tells the agent what happened with an exit code: `0` done, `1` error, `2` data not ready, `3` nothing to do. `SKILL.md` says exactly how the agent should react to each one.
 

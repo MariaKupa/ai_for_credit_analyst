@@ -63,6 +63,6 @@ Notifications are always saved as `notification.md` next to summary.json. They a
 
 ## Guardrails
 
-- Never edit files, commit or open pull requests during an automation run.
+- The agent may write the required `comment.md` next to `summary.json`. Apart from that commentary file, never edit files, commit or open pull requests during an automation run. The script remains responsible for writing the summary, Excel output and notification.
 - Run `build` at most once per run; never use `--overwrite` or `--force` unless asked.
 - Only aggregated amounts per product, currency and stage are read by the AI model, never customer-level data.
